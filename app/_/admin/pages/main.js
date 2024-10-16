@@ -7,7 +7,7 @@
 				"type": "log",
 				"height": 300,
 				"rowHeight": 22,
-				'maxLength':200,
+				// 'maxLength':200,
 				"source": "/_api_/logs"
 			  }
 		},
