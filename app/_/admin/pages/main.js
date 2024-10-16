@@ -6,6 +6,7 @@
 			body: {
 				"type": "log",
 				"height": 300,
+				'maxLength':200,
 				"source": "/_api_/logs"
 			  }
 		},
