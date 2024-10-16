@@ -1,13 +1,19 @@
-(function() {
+(function () {
 	const response = {
 		data: {
-			type: "page",
-			title: "仪表盘",
-			body: {
+			"type": "page",
+			"title": "实时日志查看",
+			"body": {
 				"type": "log",
-				"height": 300,
-				"source": "/_api_/logs"
-			  }
+				"name": "log",
+				"height": 400,
+				"source": {
+					"type": "websocket",
+					"url": "${window.location.host}/_api_/logs",
+					"reconnect": true,
+					"reconnectInterval": 3000
+				}
+			}
 		},
 		status: 0
 	}
