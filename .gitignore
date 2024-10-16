@@ -1,0 +1,8 @@
+docker-compose copy.yml
+app/__pycache__
+app/__pycache__
+app/test*
+app/src/__pycache__
+jiami.py
+.gitgnore
+.pyarmor
