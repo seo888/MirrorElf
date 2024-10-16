@@ -1,39 +1,34 @@
 #!/bin/bash
 
-# 创建 Safeline 目录
+# 创建必要的目录
 mkdir -p "/www/safeline"
-cd "/www/safeline" || exit
 
-# 下载 compose.yaml 文件
+# 进入 Safeline 目录
+cd "/www/safeline"
+
+# 下载最新的 Docker Compose 配置文件
 wget "https://waf-ce.chaitin.cn/release/latest/compose.yaml"
 
-# 检查是否成功下载 compose.yaml
-if [ ! -f "compose.yaml" ]; then
-    echo "Failed to download compose.yaml. Exiting..."
-    exit 1
-fi
-
-# 创建 .env 文件并写入环境变量
-cat <<EOL > .env
-SAFELINE_DIR=/www/safeline
-IMAGE_TAG=latest
-MGT_PORT=9443
-POSTGRES_PASSWORD=mirrorelf
-SUBNET_PREFIX=172.22.222
-IMAGE_PREFIX=swr.cn-east-3.myhuaweicloud.com/chaitin-safeline
-EOL
+# 使用 echo 命令逐行写入 .env 文件
+echo "SAFELINE_DIR=/www/safeline" > .env
+echo "IMAGE_TAG=latest" >> .env
+echo "MGT_PORT=9443" >> .env
+echo "POSTGRES_PASSWORD=mirrorelf" >> .env
+echo "SUBNET_PREFIX=172.22.222" >> .env
+echo "IMAGE_PREFIX=swr.cn-east-3.myhuaweicloud.com/chaitin-safeline" >> .env
 
 # 确保 /data/safeline 目录存在
 mkdir -p "/data/safeline"
-cd "/data/safeline" || exit
+
+# 进入 /data/safeline 目录
+cd "/data/safeline"
 
 # 启动 Safeline Docker 容器
-docker compose up -d
+docker compose -f /www/safeline/compose.yaml up -d
 
-# 检查 Docker Compose 是否启动成功
-if [ $? -ne 0 ]; then
-    echo "Failed to start Safeline with Docker Compose. Please check the logs."
-    exit 1
+# 检查 Docker Compose 启动情况
+if [ $? -eq 0 ]; then
+    echo "Safeline started successfully!"
 else
-    echo "Safeline has been successfully started."
+    echo "Failed to start Safeline with Docker Compose. Please check the logs."
 fi
