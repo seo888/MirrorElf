@@ -14,13 +14,6 @@
 				// "quickSaveApi": "/_api_/target_cache/update?id=${id}",  // 更新 API 地址
 				"draggable": true,
 				"api": "/_api_/target_cache/query",
-				"perPageAvailable": [
-					20,
-					50,
-					100,
-					500,
-					1000
-				],
 				"perPage": 20,
 				"keepItemSelectionOnPageChange": true,
 				"autoFillHeight": true,
@@ -38,7 +31,6 @@
 				"filterTogglable": true,
 				"headerToolbar": [
 					"bulkActions",
-
 					{
 						"type": "tpl",
 						"tpl": "URL总数: ${total_count}",
@@ -54,6 +46,11 @@
 					},
 					{
 						"type": "pagination",
+						"align": "right"
+					},
+					{
+						"type": "tpl",
+						"tpl": "当前：${items_count} 项 | 共：${count} 项",
 						"align": "right"
 					}
 				],

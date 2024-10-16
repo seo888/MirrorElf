@@ -2,12 +2,8 @@
 	const response = {
 		data: {
 			type: "page",
-			title: "仪表盘",
-			body: {
-				"type": "log",
-				"height": 300,
-				"source": "/_api_/logs"
-			  }
+			title: "查询工具",
+			body: "收录 排名 查询工具 开发中..."
 		},
 		status: 0
 	}
