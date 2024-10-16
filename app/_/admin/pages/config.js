@@ -31,11 +31,11 @@
 							"tpl": "${act_info} <a href='https://t.me/MirrorElf' target='_blank'>续费</a>"
 						},
 						{
-							"label": "设备机器码：${mechine_id}",
+							"label": "设备机器码：${machine_id}",
 							"type": "button",
 							"level": "link",
 							"actionType": "copy",
-							"content": "${mechine_id}",
+							"content": "${machine_id}",
 							"tooltip": "复制",
 							"tooltipPlacement": "top"
 						},

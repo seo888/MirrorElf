@@ -3,7 +3,7 @@
 		data: {
 			type: "page",
 			title: "一键https",
-			body: "this result is from jsonp"
+			body: "一键https 开发中..."
 		},
 		status: 0
 	}

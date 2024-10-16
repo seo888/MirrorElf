@@ -3,7 +3,7 @@
 		data: {
 			type: "page",
 			title: "蜘蛛日志",
-			body: "this result is from jsonp"
+			body: "蜘蛛日志 开发中..."
 		},
 		status: 0
 	}

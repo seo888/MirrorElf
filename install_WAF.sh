@@ -17,11 +17,11 @@ echo "POSTGRES_PASSWORD=mirrorelf" >> .env
 echo "SUBNET_PREFIX=172.22.222" >> .env
 echo "IMAGE_PREFIX=swr.cn-east-3.myhuaweicloud.com/chaitin-safeline" >> .env
 
-# 确保 /data/safeline 目录存在
-mkdir -p "/data/safeline"
+# 确保 /www/safeline 目录存在
+mkdir -p "/www/safeline"
 
-# 进入 /data/safeline 目录
-cd "/data/safeline"
+# 进入 /www/safeline 目录
+cd "/www/safeline"
 
 # 启动 Safeline Docker 容器
 docker compose -f /www/safeline/compose.yaml up -d
