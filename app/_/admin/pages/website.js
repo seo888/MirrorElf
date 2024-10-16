@@ -16,7 +16,6 @@
 				"api": "/_api_/website/query",
 				// "checkOnItemClick": true,
 				"perPageAvailable": [
-					10,
 					20,
 					50,
 					100,
@@ -145,6 +144,7 @@
 						"tpl": "网站总数: ${web_count} | 主站: ${www_count} | 泛站: ${web_count-www_count} ",
 						"className": "v-middle"
 					},
+					"reload",
 					{
 						"type": "columns-toggler",
 						"align": "right"
@@ -157,7 +157,12 @@
 						"type": "pagination",
 						"align": "right"
 					},
-					"reload"
+					{
+						"type": "tpl",
+						"tpl": "当前：${items_count} 项 | 共：${count} 项",
+						"align": "right"
+					},
+					
 				],
 				"footerToolbar": [
 					"statistics",
