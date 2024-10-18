@@ -32,12 +32,13 @@
 									},
 									{
 									  "type": "editor",  // 文件内容编辑器
+									  "placeholder": "${placeholder_mes | raw}",
 									  "name": "content",
 									  "label": "内容",
 									  "size": "xxl",
 									  "mode": "code",
-									  "language": "text"
-									}
+									  "language": "text",
+									},
 								  ],
 								  "actions": [
 									{
