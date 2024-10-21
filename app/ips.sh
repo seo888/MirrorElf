@@ -7,6 +7,11 @@ IPS_TXT="./config/IPS.txt"
 ips=$(ip addr | grep 'inet ' | awk '{print $2}' | cut -d/ -f1 | \
     grep -v '^127.0.0.1$' | \
     grep -vE '^10\.|^172\.(1[6-9]|2[0-9]|3[0-1])\.|^192\.168\.')
-
+    
 # 将 IP 地址写入文件
 echo "$ips" > "$IPS_TXT"
+
+# 创建需要的目录
+mkdir -p ../data/postgres_data
+mkdir -p ../data/rabbitmq_data
+mkdir -p ../data/garnet_data
