@@ -2,7 +2,7 @@
 	const response = {
 		data: {
 			"type": "page",
-			"title": "缓存管理",
+			"title": "目标管理",
 			"toolbar": [
 
 			],
@@ -11,9 +11,9 @@
 				"type": "crud",
 				"id": "crud-table",
 				"syncLocation": false,
-				// "quickSaveApi": "/_api_/website_cache/update?id=${id}",  // 更新 API 地址
+				// "quickSaveApi": "/_api_/target_cache/update?id=${id}",  // 更新 API 地址
 				"draggable": true,
-				"api": "/_api_/website_cache/query",
+				"api": "/_api_/target_cache/query",
 				"perPage": 20,
 				"keepItemSelectionOnPageChange": true,
 				"autoFillHeight": true,
@@ -24,7 +24,7 @@
 						"label": "批量删除",
 						"level": "danger",
 						"actionType": "ajax",
-						"api": "delete:/_api_/website_cache/delete?ids=${ids|raw}",
+						"api": "delete:/_api_/target_cache/delete?ids=${ids|raw}",
 						"confirmText": "确认批量删除URL【${ids|raw}】（注意：操作不可逆，请谨慎操作）"
 					}
 				],
@@ -98,33 +98,21 @@
 						"sortable": true,  // 启用排序功能
 						"searchable": true,
 					},
-					// {
-					// 	"name": "status_code",
-					// 	"label": "状态码",
-					// 	"sortable": true,  // 启用排序功能
-					// 	"searchable": true,
-					// },
 					{
-						"name": "target",
-						"label": "目标站",
+						"name": "status_code",
+						"label": "状态码",
+						"sortable": true,  // 启用排序功能
+						"searchable": true,
+					},
+					{
+						"name": "content_type",
+						"label": "内容类型",
 						"sortable": true,  // 启用排序功能
 						"searchable": true,
 					},
 					{
 						"name": "title",
 						"label": "标题",
-						"sortable": true,  // 启用排序功能
-						"searchable": true,
-					},
-					{
-						"name": "keywords",
-						"label": "关键词",
-						"sortable": true,  // 启用排序功能
-						"searchable": true,
-					},
-					{
-						"name": "description",
-						"label": "描述",
 						"sortable": true,  // 启用排序功能
 						"searchable": true,
 					},
@@ -144,10 +132,10 @@
 						"searchable": true,
 					},
 					{
-						"name": "source",
-						"label": "源码",
+						"type": "datetime",  // 显示为日期时间类型
+						"name": "created_at",
+						"label": "创建于",
 						"sortable": true,  // 启用排序功能
-						// "searchable": true,
 					},
 					{
 						"type": "datetime",  // 显示为日期时间类型
@@ -164,7 +152,7 @@
 								"icon": "fa fa-times text-danger",
 								"actionType": "ajax",
 								"confirmText": "确认删除【${id}】${url}",
-								"api": "delete:/_api_/website_cache/delete?ids=$id",
+								"api": "delete:/_api_/target_cache/delete?ids=$id",
 							},
 						],
 						"toggled": true

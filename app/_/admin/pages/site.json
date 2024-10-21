@@ -29,9 +29,15 @@
             "icon": "fa fa-globe"
           },
           {
+            "label": "缓存管理",
+            "url": "/website",
+            "schemaApi": "jsonp:/_/admin/pages/cache.js?callback=jsonpCallback",
+            "icon": "fa fa-database"
+          },
+          {
             "label": "目标管理",
             "url": "/cache",
-            "schemaApi": "jsonp:/_/admin/pages/cache.js?callback=jsonpCallback",
+            "schemaApi": "jsonp:/_/admin/pages/target.js?callback=jsonpCallback",
             "icon": "fa fa-database"
           },
           {
