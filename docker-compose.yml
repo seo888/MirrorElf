@@ -283,5 +283,20 @@ services:
 
 volumes:
   postgres_db_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /www/Mirror-Elf/data/postgres_data  # 指定外部的路径
   garnet_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /www/Mirror-Elf/data/garnet_data  # 指定外部的路径
   rabbitmq_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /www/Mirror-Elf/data/rabbitmq_data  # 指定外部的路径
