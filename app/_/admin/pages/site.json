@@ -30,13 +30,13 @@
           },
           {
             "label": "缓存管理",
-            "url": "/website",
+            "url": "/cache",
             "schemaApi": "jsonp:/_/admin/pages/cache.js?callback=jsonpCallback",
             "icon": "fa fa-database"
           },
           {
             "label": "目标管理",
-            "url": "/cache",
+            "url": "/target",
             "schemaApi": "jsonp:/_/admin/pages/target.js?callback=jsonpCallback",
             "icon": "fa fa-database"
           },
