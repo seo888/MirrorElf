@@ -149,12 +149,6 @@
 						"sortable": true,  // 启用排序功能
 						"searchable": true,
 					},
-					// {
-					// 	"name": "source",
-					// 	"label": "源码",
-					// 	"sortable": true,  // 启用排序功能
-					// 	// "searchable": true,
-					// },
 					{
 						"type": "datetime",  // 显示为日期时间类型
 						"name": "updated_at",
@@ -164,24 +158,24 @@
 					{
 						"type": "operation",
 						"label": "操作",
-						"width": 60,
+						"width": 120,
 						"buttons": [
 							{
 								"type": "button",
 								"icon": "fa fa-eraser text-danger",
 								"actionType": "ajax",
-								"tooltip": "清空根域名缓存",
+								"tooltip": "清空域名缓存",
 								"confirmText": "确认清空 根域名:${root_domain} 及所有 泛域名:*.${root_domain} 所有页面缓存",
 								"api": "delete:/_api_/website_cache/delete?root_domain=$root_domain",
 							},
 							{
 								"type": "button",
 								"icon": "fa fa-pencil",
-								"tooltip": "编辑",
+								"tooltip": "编辑源码",
 								"actionType": "drawer",
 								"drawer": {
 									"size": "lg",
-									"title": "编辑",
+									"title": "编辑源码",
 									"body": {
 										"type": "form",
 										"name": "sample-edit-form",
@@ -198,49 +192,24 @@
 												"type": "static",
 												"name": "lang",
 												"label": "语言",
-												"required": true
 											},
 											{
 												"type": "static",
 												"name": "target",
 												"label": "目标站",
 											},
-											// {
-											// 	"type": "static-mapping",
-											// 	"name": "is_www",
-											// 	"label": "站点类型",
-											// 	"map": {
-											// 		"true": "主站",
-											// 		"false": "泛站"
-											// 	}
-											// },
-											// {
-											// 	"type": "input-text",
-											// 	"name": "target",
-											// 	"label": "目标站",
-											// 	"required": true,
-											// 	"placeholder": "目标站格式: en|www.english.com",
-											// 	"validations": {
-											// 		"matchRegexp": ".*\\|.*"  // 正则表达式：要求输入中必须包含 "|"
-											// 	},
-											// 	"validationErrors": {
-											// 		"matchRegexp": "请使用间隔符“|” 指定目标站语言 如: en|www.english.com  或  zh|www.chinese.com"  // 自定义错误提示信息
-											// 	}
-											// },
-											// 插入新的 service，用于加载 target_replace 数据
 											{
-												"type": "input-text",
+												"type": "static",
 												"name": "title",
 												"label": "网站标题",
-												"required": true
 											},
 											{
-												"type": "input-text",
+												"type": "static",
 												"name": "keywords",
 												"label": "关键词"
 											},
 											{
-												"type": "textarea",
+												"type": "static",
 												"name": "description",
 												"label": "描述"
 											},
@@ -262,7 +231,7 @@
 														"type": "editor",
 														"language": "html",
 														"name": "source",
-														"label": "目标站替换词",
+														"label": "网页源码",
 													}
 												]
 											},
