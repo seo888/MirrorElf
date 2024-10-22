@@ -33,7 +33,7 @@
 					"bulkActions",
 					{
 						"type": "tpl",
-						"tpl": "目标URL 共: ${total_count}条",
+						"tpl": "【目标】URL 共: ${total_count}条",
 						"className": "v-middle"
 					},
 					"reload",
@@ -79,7 +79,7 @@
 						"type": "tpl",
 						"tpl": "<a href='javascript:void(0);' class='link-icon' target='_blank'>${url}</a>",
 						"name": "url",
-						"label": "目标URL",
+						"label": "【目标】URL",
 						"sortable": true,
 						"searchable": true,
 						"onEvent": {
