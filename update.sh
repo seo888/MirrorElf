@@ -10,10 +10,8 @@ docker exec mirror_elf python update.py
 docker compose down
 
 # 删除指定镜像
-docker rmi mirror-elf-mirror_elf
+docker rmi mirror-elf-mirror_elf || true  # 如果镜像不存在则忽略错误
+docker rmi $(docker images -q mirror-elf-celery_worker*) || true  # 同样忽略错误
 
 # 重新启动 Docker Compose
 docker compose up -d
-
-
-
