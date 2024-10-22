@@ -25,7 +25,7 @@
 						"level": "danger",
 						"actionType": "ajax",
 						"api": "delete:/_api_/website_cache/delete?ids=${ids|raw}",
-						"confirmText": "确认批量删除URL【${ids|raw}】（注意：操作不可逆，请谨慎操作）"
+						"confirmText": "确认批量删除【缓存】URL【${ids|raw}】（注意：操作不可逆，请谨慎操作）"
 					}
 				],
 				"filterTogglable": true,
@@ -33,7 +33,7 @@
 					"bulkActions",
 					{
 						"type": "tpl",
-						"tpl": "URL总数: ${total_count}",
+						"tpl": "【缓存】URL总数: ${total_count}",
 						"className": "v-middle"
 					},
 					{
@@ -68,7 +68,7 @@
 						"searchable": {
 							"type": "input-text",
 							"name": "search_term",
-							"label": "🔍搜索",
+							"label": "🔍模糊搜索",
 						},
 						"fixed": "left",
 						"sortable": true,  // 启用排序功能
@@ -162,18 +162,18 @@
 						"buttons": [
 							{
 								"type": "button",
-								"icon": "fa fa-eraser text-danger",
+								"icon": "fa fa-broom text-danger",
 								"actionType": "ajax",
-								"tooltip": "清空域名缓存",
-								"confirmText": "确认清空 根域名:${root_domain} 及所有 泛域名:*.${root_domain} 所有页面缓存",
+								"tooltip": "清空域名所有缓存",
+								"confirmText": "确认清空 根域名: ${root_domain} 泛域名: *.${root_domain} 所有页面缓存",
 								"api": "delete:/_api_/website_cache/delete?root_domain=$root_domain",
 							},
 							{
-								"type": "button",
 								"icon": "fa fa-pencil",
 								"tooltip": "编辑源码",
 								"actionType": "drawer",
 								"drawer": {
+									"resizable": true,
 									"size": "lg",
 									"title": "编辑源码",
 									"body": {
@@ -187,11 +187,6 @@
 												"name": "url",
 												"label": "网站URL",
 
-											},
-											{
-												"type": "static",
-												"name": "lang",
-												"label": "语言",
 											},
 											{
 												"type": "static",
@@ -212,16 +207,6 @@
 												"type": "static",
 												"name": "description",
 												"label": "描述"
-											},
-											{
-												"type": "static",
-												"name": "domain",
-												"label": "域名"
-											},
-											{
-												"type": "static",
-												"name": "root_domain",
-												"label": "根域名"
 											},
 											{
 												"type": "service",
@@ -250,19 +235,19 @@
 								}
 							},
 							{
-								"type": "button",
 								"icon": "fa fa-eraser text-danger",
 								"actionType": "ajax",
-								"tooltip": "清空当前域名缓存",
-								"confirmText": "确认清空 域名:${domain} 所有页面缓存",
+								"tooltip": "清空缓存",
+								"confirmText": "确认清空 域名: ${domain} 所有页面缓存",
 								"api": "delete:/_api_/website_cache/delete?domain=$domain",
 							},
 							{
 								"icon": "fa fa-times text-danger",
 								"actionType": "ajax",
-								"confirmText": "确认删除【${id}】${url}",
-								"api": "delete:/_api_/website_cache/delete?ids=$id",
-							},
+								"tooltip": "删除",
+								"confirmText": "确认删除缓存【${id}】${url}",
+								"api": "delete:/_api_/website_cache/delete?ids=$id"
+							}
 						],
 						"toggled": true
 					}

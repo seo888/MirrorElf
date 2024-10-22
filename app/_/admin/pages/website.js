@@ -320,6 +320,7 @@
 								"tooltip": "编辑",
 								"actionType": "drawer",
 								"drawer": {
+									"resizable": true,
 									"size": "lg",
 									"title": "编辑",
 									"body": {

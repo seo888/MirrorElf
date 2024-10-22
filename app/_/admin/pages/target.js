@@ -25,7 +25,7 @@
 						"level": "danger",
 						"actionType": "ajax",
 						"api": "delete:/_api_/target_cache/delete?ids=${ids|raw}",
-						"confirmText": "确认批量删除URL【${ids|raw}】（注意：操作不可逆，请谨慎操作）"
+						"confirmText": "确认批量删除【目标】URL【${ids|raw}】（注意：操作不可逆，请谨慎操作）"
 					}
 				],
 				"filterTogglable": true,

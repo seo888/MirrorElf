@@ -19,6 +19,7 @@
 							"actionType": "drawer",  // 打开抽屉进行文件编辑
 							"drawer": {
 								"title": "【$filename】",
+								"resizable": true,
 								"size": "lg",
 								"body": [
 									{
