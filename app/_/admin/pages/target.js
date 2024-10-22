@@ -33,7 +33,7 @@
 					"bulkActions",
 					{
 						"type": "tpl",
-						"tpl": "URL总数: ${total_count}",
+						"tpl": "【目标】URL总数: ${total_count}",
 						"className": "v-middle"
 					},
 					{
@@ -68,7 +68,7 @@
 						"searchable": {
 							"type": "input-text",
 							"name": "search_term",
-							"label": "🔍搜索",
+							"label": "🔍模糊搜索",
 						},
 						"fixed": "left",
 						"sortable": true,  // 启用排序功能

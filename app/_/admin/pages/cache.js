@@ -36,6 +36,7 @@
 						"tpl": "【缓存】URL总数: ${total_count}",
 						"className": "v-middle"
 					},
+					"reload",
 					{
 						"type": "columns-toggler",
 						"align": "right"

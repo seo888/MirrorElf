@@ -178,7 +178,7 @@
 						"searchable": {
 							"type": "textarea",
 							"name": "search_term",
-							"label": "🔍搜索",
+							"label": "🔍模糊搜索",
 							"clearable": true,
 							"maxLength": 10000,
 							"showCounter": true,
