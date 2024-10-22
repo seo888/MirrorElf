@@ -33,7 +33,7 @@
 					"bulkActions",
 					{
 						"type": "tpl",
-						"tpl": "【缓存】URL总数: ${total_count}",
+						"tpl": "【缓存】网站URL 共: ${total_count}条",
 						"className": "v-middle"
 					},
 					"reload",

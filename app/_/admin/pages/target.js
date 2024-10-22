@@ -33,9 +33,10 @@
 					"bulkActions",
 					{
 						"type": "tpl",
-						"tpl": "【目标】URL总数: ${total_count}",
+						"tpl": "目标URL 共: ${total_count}条",
 						"className": "v-middle"
 					},
+					"reload",
 					{
 						"type": "columns-toggler",
 						"align": "right"
