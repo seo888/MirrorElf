@@ -78,7 +78,7 @@
 						"type": "tpl",
 						"tpl": "<a href='javascript:void(0);' class='link-icon' target='_blank'>${url}</a>",
 						"name": "url",
-						"label": "目标URL",
+						"label": "网站URL",
 						"sortable": true,
 						"searchable": true,
 						"onEvent": {
@@ -98,12 +98,6 @@
 						"sortable": true,  // 启用排序功能
 						"searchable": true,
 					},
-					// {
-					// 	"name": "status_code",
-					// 	"label": "状态码",
-					// 	"sortable": true,  // 启用排序功能
-					// 	"searchable": true,
-					// },
 					{
 						"name": "target",
 						"label": "目标站",
@@ -143,12 +137,12 @@
 						"sortable": true,  // 启用排序功能
 						"searchable": true,
 					},
-					{
-						"name": "source",
-						"label": "源码",
-						"sortable": true,  // 启用排序功能
-						// "searchable": true,
-					},
+					// {
+					// 	"name": "source",
+					// 	"label": "源码",
+					// 	"sortable": true,  // 启用排序功能
+					// 	// "searchable": true,
+					// },
 					{
 						"type": "datetime",  // 显示为日期时间类型
 						"name": "updated_at",
