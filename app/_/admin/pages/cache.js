@@ -33,7 +33,7 @@
 					"bulkActions",
 					{
 						"type": "tpl",
-						"tpl": "【缓存】网站URL 共: ${total_count}条",
+						"tpl": "【缓存】URL 共: ${total_count}条",
 						"className": "v-middle"
 					},
 					"reload",
@@ -79,7 +79,7 @@
 						"type": "tpl",
 						"tpl": "<a href='javascript:void(0);' class='link-icon' target='_blank'>${url}</a>",
 						"name": "url",
-						"label": "网站URL",
+						"label": "URL",
 						"sortable": true,
 						"searchable": true,
 						"onEvent": {
@@ -180,20 +180,45 @@
 									"body": {
 										"type": "form",
 										"name": "sample-edit-form",
-										"api": "/_api_/website/update?id=$id",
+										"api": "/_api_/website_cache/update?id=$id",
 										"reload": "crud-table", // 在提交后重新加载特定的组件
 										"body": [
 											{
-												"type": "static",
+												"type": "tpl",
+												"tpl": "<a href='javascript:void(0);' class='link-icon' target='_blank'>${url}</a>",
 												"name": "url",
-												"label": "网站URL",
-
+												"label": "URL",
+												"sortable": true,
+												"searchable": true,
+												"onEvent": {
+													"click": {
+														"actions": [
+															{
+																"actionType": "custom",
+																"script": "const parts = event.data.url.split('['); if(parts.length > 0) { const linkTarget = parts[0]; document.querySelector('.link-icon').setAttribute('href', 'http://' + linkTarget); window.open('http://' + linkTarget, '_blank'); }"
+															}
+														]
+													}
+												}
 											},
 											{
-												"type": "static",
+												"type": "tpl",
+												"tpl": "<a href='javascript:void(0);' class='link-icon' target='_blank'>${target}</a>",
 												"name": "target",
 												"label": "目标站",
-											},
+												"sortable": true,
+												"searchable": true,
+												"onEvent": {
+													"click": {
+														"actions": [
+															{
+																"actionType": "custom",
+																"script": "const parts = event.data.url.split('['); if(parts.length > 0) { const linkTarget = parts[0]; document.querySelector('.link-icon').setAttribute('href', 'http://' + linkTarget); window.open('http://' + linkTarget, '_blank'); }"
+															}
+														]
+													}
+												}
+											},											
 											{
 												"type": "static",
 												"name": "title",

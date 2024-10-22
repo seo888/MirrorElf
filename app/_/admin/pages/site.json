@@ -32,7 +32,7 @@
             "label": "缓存管理",
             "url": "/cache",
             "schemaApi": "jsonp:/_/admin/pages/cache.js?callback=jsonpCallback",
-            "icon": "fa fa-database"
+            "icon": "fa fa-cubes"
           },
           {
             "label": "目标管理",
@@ -68,7 +68,7 @@
             "label": "查询工具",
             "url": "/tool",
             "schemaApi": "jsonp:/_/admin/pages/tool.js?callback=jsonpCallback",
-            "icon": "fa fa-spider"
+            "icon": "fa fa-magnifying-glass"
           },
           {
             "label": "设置",
