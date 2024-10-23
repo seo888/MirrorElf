@@ -68,7 +68,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_1
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_1@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_1@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -81,7 +81,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_2
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_2@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_2@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -94,7 +94,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_3
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_3@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_3@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -107,7 +107,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_4
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_4@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_4@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -120,7 +120,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_5
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_5@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_5@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -133,7 +133,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_6
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_6@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_6@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -146,7 +146,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_7
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_7@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_7@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -159,7 +159,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_8
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_8@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_8@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -172,7 +172,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_9
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_9@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_9@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -185,7 +185,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_10
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_10@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_10@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -198,7 +198,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_11
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_11@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_11@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -211,7 +211,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_12
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_12@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_12@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -224,7 +224,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_13
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_13@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_13@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -237,7 +237,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_14
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_14@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_14@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -250,7 +250,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_15
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_15@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_15@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -263,7 +263,7 @@ services:
     network_mode: host
     build: ./app
     container_name: celery_worker_16
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 -n celery_worker_16@%h
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_16@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
@@ -271,6 +271,112 @@ services:
       - CELERYD_PREFETCH_MULTIPLIER=1
     depends_on:
       - rabbitmq
+
+  celery_worker_17:
+    network_mode: host
+    build: ./app
+    container_name: celery_worker_17
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_17@%h
+    environment:
+      - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
+      - CELERY_RESULT_BACKEND=rpc://
+      - CELERY_RESULT_EXPIRES=300
+      - CELERYD_PREFETCH_MULTIPLIER=1
+    depends_on:
+      - rabbitmq
+      
+  celery_worker_18:
+    network_mode: host
+    build: ./app
+    container_name: celery_worker_18
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_18@%h
+    environment:
+      - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
+      - CELERY_RESULT_BACKEND=rpc://
+      - CELERY_RESULT_EXPIRES=300
+      - CELERYD_PREFETCH_MULTIPLIER=1
+    depends_on:
+      - rabbitmq
+
+  celery_worker_19:
+    network_mode: host
+    build: ./app
+    container_name: celery_worker_19
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_19@%h
+    environment:
+      - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
+      - CELERY_RESULT_BACKEND=rpc://
+      - CELERY_RESULT_EXPIRES=300
+      - CELERYD_PREFETCH_MULTIPLIER=1
+    depends_on:
+      - rabbitmq
+    
+  celery_worker_20:
+    network_mode: host
+    build: ./app
+    container_name: celery_worker_20
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_20@%h
+    environment:
+      - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
+      - CELERY_RESULT_BACKEND=rpc://
+      - CELERY_RESULT_EXPIRES=300
+      - CELERYD_PREFETCH_MULTIPLIER=1
+    depends_on:
+      - rabbitmq
+
+  celery_worker_21:
+    network_mode: host
+    build: ./app
+    container_name: celery_worker_21
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_21@%h
+    environment:
+      - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
+      - CELERY_RESULT_BACKEND=rpc://
+      - CELERY_RESULT_EXPIRES=300
+      - CELERYD_PREFETCH_MULTIPLIER=1
+    depends_on:
+      - rabbitmq
+
+  celery_worker_22:
+    network_mode: host
+    build: ./app
+    container_name: celery_worker_22
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_22@%h
+    environment:
+      - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
+      - CELERY_RESULT_BACKEND=rpc://
+      - CELERY_RESULT_EXPIRES=300
+      - CELERYD_PREFETCH_MULTIPLIER=1
+    depends_on:
+      - rabbitmq
+    
+  celery_worker_23:
+    network_mode: host
+    build: ./app
+    container_name: celery_worker_23
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_23@%h
+    environment:
+      - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
+      - CELERY_RESULT_BACKEND=rpc://
+      - CELERY_RESULT_EXPIRES=300
+      - CELERYD_PREFETCH_MULTIPLIER=1
+    depends_on:
+      - rabbitmq
+      
+  celery_worker_24:
+    network_mode: host
+    build: ./app
+    container_name: celery_worker_24
+    command: celery -A tasks worker -l info -P gevent -c 48 --prefetch-multiplier=1 --time-limit=60 -n celery_worker_24@%h
+    environment:
+      - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
+      - CELERY_RESULT_BACKEND=rpc://
+      - CELERY_RESULT_EXPIRES=300
+      - CELERYD_PREFETCH_MULTIPLIER=1
+    depends_on:
+      - rabbitmq
+  
+
 
   flower:
     image: mher/flower

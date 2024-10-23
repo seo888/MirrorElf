@@ -14,6 +14,13 @@
 				// "quickSaveApi": "/_api_/website_cache/update?id=${id}",  // 更新 API 地址
 				"draggable": true,
 				"api": "/_api_/website_cache/query",
+				"perPageAvailable": [
+					10,
+					20,
+					50,
+					500,
+					1000
+				],
 				"perPage": 20,
 				"keepItemSelectionOnPageChange": true,
 				"autoFillHeight": true,

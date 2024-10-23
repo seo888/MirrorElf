@@ -36,7 +36,7 @@
 							"level": "link",
 							"actionType": "copy",
 							"content": "${machine_id}",
-							"tooltip": "复制",
+							"tooltip": "点击复制",
 							"tooltipPlacement": "top"
 						},
 						{
