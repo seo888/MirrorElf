@@ -5,7 +5,9 @@
   程序名称: 'web1 - Mirror-Elf by TG@seo898'
 
 【网站设置】:
-  自动建站: True # 关闭时: 不自动生成首页网站配置 www.domain.com_zh_www.target.com_zh.yml
+  自动建站: True # 关闭时: 不自动生成首页网站配置
+  泛站自动建站: True # 关闭时: 不自动生成首页网站配置
+  泛站爬取目标: False # 关闭时: 当没有目标站内页缓存时，不会爬取目标站内页
   语言: 'zh' # zh:中文 | zh-Hant:繁体中文 | en:英文 | pt:葡萄牙文
   缓存静态文件: '.ico' # 静态文件保存到target缓存中，其它静态将通过流式代理返回 '.css|.js|.png|.jpg|.ico|.svg|.gif|.jpeg'
   首页更新时间: 1 # 单位：天 如果想永不更新首页，填写99999即可

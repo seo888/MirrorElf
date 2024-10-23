@@ -125,6 +125,16 @@
 													"label": "自动建站"
 												},
 												{
+													"name": "泛站自动建站",
+													"type": "switch",
+													"label": "泛站自动建站"
+												},
+												{
+													"name": "泛站爬取目标",
+													"type": "switch",
+													"label": "泛站爬取目标"
+												},
+												{
 													"name": "缓存静态文件",
 													"type": "input-text",
 													"label": "缓存静态文件"
