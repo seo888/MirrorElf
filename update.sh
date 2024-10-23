@@ -13,6 +13,7 @@ docker compose down
 docker volume rm mirror-elf_rabbitmq_data || true  # 如果卷不存在则忽略错误
 
 # 删除指定镜像
+docker rmi rabbitmq || true  # 如果镜像不存在则忽略错误
 docker rmi mirror-elf-mirror_elf || true  # 如果镜像不存在则忽略错误
 docker rmi $(docker images -q mirror-elf-celery_worker*) || true  # 同样忽略错误
 
