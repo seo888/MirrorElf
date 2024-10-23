@@ -187,11 +187,11 @@
 									"body": {
 										"type": "form",
 										"name": "sample-edit-form",
-										"api": "/_api_/website/update?id=$id",
+										"api": "/_api_/website_cache/update?id=$id",
 										"reload": "crud-table", // 在提交后重新加载特定的组件
 										"body": [
 											{
-												"type": "tpl",
+												"type": "static",
 												"tpl": "<a href='javascript:void(0);' class='link-icon' target='_blank'>${url}</a>",
 												"name": "url",
 												"label": "URL",
@@ -209,7 +209,7 @@
 												}
 											},
 											{
-												"type": "tpl",
+												"type": "static",
 												"tpl": "<a href='javascript:void(0);' class='link-icon' target='_blank'>${target}</a>",
 												"name": "target",
 												"label": "目标站",
