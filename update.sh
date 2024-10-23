@@ -17,4 +17,4 @@ docker rmi $(docker images -q mirror-elf-celery_worker*) || true  # 同样忽略
 docker compose up -d
 
 # 从 repo 目录复制最新的 update.sh 文件，覆盖现有文件
-cp /www/Mirror-Elf/repo/update.sh /www/Mirror-Elf/update.sh
+cp /www/Mirror-Elf/app/repo/update.sh /www/Mirror-Elf/update.sh
