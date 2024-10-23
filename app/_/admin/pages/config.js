@@ -253,6 +253,11 @@
 													"label": "IP与非域名来路"
 												},
 												{
+													"name": "泛站来路",
+													"type": "switch",
+													"label": "泛站来路"
+												},
+												{
 													"name": "UA黑名单",
 													"type": "textarea",
 													"label": "UA黑名单"

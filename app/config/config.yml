@@ -28,6 +28,7 @@
 【访问策略】:
   非绑定域名来路: True
   IP与非域名来路: False
+  泛站来路: False
   UA黑名单: 'Scrapy|Curl|HttpClient|UniversalFeedParser|lightDeckReports Bot|heritrix|Java|Bytespider|YandexBot|FlightDeckReports|Indy Library|BOT/0.1|DigExt|Feedly|Swiftbot|oBot|Python-urllib|CrawlDaddy|YYSpider|JikeSpider|ZmEu|MJ12bot|WebZIP|Apache-HttpAsyncClient|HttpClient|WinHttp|jaunty|Alexa Toolbar|LinkpadBot|Microsoft URL Control|node-superagent|Ezooms|Jullo|SemrushBot|FetchURL|AhrefsBot|EasouSpider|java/|CoolpadWebkit|Linguee Bot|ApacheBench|AskTbFXTV|FeedDemon'
   IP黑名单: '888.888.888.888|88.88.88.88|10.240.2.131'
 
