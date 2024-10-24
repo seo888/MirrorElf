@@ -157,8 +157,9 @@
 						"width": 60,
 						"buttons": [
 							{
-								"icon": "fa fa-times text-danger",
+								"icon": "fa fa-trash text-danger",
 								"actionType": "ajax",
+								"tooltip": "删除",
 								"confirmText": "确认删除【${id}】${url}",
 								"api": "delete:/_api_/target_cache/delete?ids=$id",
 							},

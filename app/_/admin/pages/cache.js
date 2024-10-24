@@ -275,7 +275,7 @@
 								"api": "delete:/_api_/website_cache/delete?domain=$domain",
 							},
 							{
-								"icon": "fa fa-times text-danger",
+								"icon": "fa fa-trash text-danger",
 								"actionType": "ajax",
 								"tooltip": "删除",
 								"confirmText": "确认删除缓存【${id}】${url}",

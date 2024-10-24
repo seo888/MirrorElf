@@ -303,16 +303,23 @@
 					{
 						"type": "operation",
 						"label": "操作",
-						"width": 120,
+						"width": 150,
 						"buttons": [
 							{
 								"type": "button",
 								"icon": "fa fa-refresh text-danger",
 								"actionType": "ajax",
 								"tooltip": "换目标站",
-								"confirmText": "确认删除【${id}】${domain} 目标站: ${target}，进行随机更换",
+								"confirmText": "确认随机更换【${id}】${domain} 目标站: ${target}",
 								"api": "get:/_api_/website/random_target?id=$id",
-
+							},
+							{
+								"type": "button",
+								"icon": "fa fa-times text-danger",
+								"actionType": "ajax",
+								"tooltip": "删除目标站",
+								"confirmText": "确认删除 目标站库中的: ${target}",
+								"api": "get:/_api_/files/target.txt?line=$target",
 							},
 							{
 								"type": "button",
@@ -438,7 +445,7 @@
 							},
 							{
 								"type": "button",
-								"icon": "fa fa-times text-danger",
+								"icon": "fa fa-trash text-danger",
 								"actionType": "ajax",
 								"tooltip": "删除",
 								"confirmText": "确认删除【${id}】${domain}",
