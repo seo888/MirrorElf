@@ -49,10 +49,6 @@
 						"align": "right"
 					},
 					{
-						"type": "drag-toggler",
-						"align": "right"
-					},
-					{
 						"type": "pagination",
 						"align": "right"
 					},
@@ -162,10 +158,31 @@
 						"name": "is_mapping",
 						"label": "链接映射",
 						"map": {
-							"true": "链接映射",
+							"true": "映射",
 							"false": "正常"
 						},
 						"sortable": true,
+						"searchable": {
+							"type": "select",
+							"name": "is_mapping",
+							"label": "链接映射",
+							"options": [
+								{
+									"label": "正常",
+									"value": false
+								},
+								{
+									"label": "全部",
+									"value": ''
+								},
+								{
+									"label": "映射",
+									"value": true
+								},
+							],
+							"value": '',  // 默认值设置为 "主站"
+							"placeholder": "选择站点类型"
+						}
 					},
 					{
 						"type": "datetime",  // 显示为日期时间类型

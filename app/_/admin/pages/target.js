@@ -49,10 +49,6 @@
 						"align": "right"
 					},
 					{
-						"type": "drag-toggler",
-						"align": "right"
-					},
-					{
 						"type": "pagination",
 						"align": "right"
 					},
