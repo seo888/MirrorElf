@@ -319,7 +319,7 @@
 								"actionType": "ajax",
 								"tooltip": "删除目标站",
 								"confirmText": "确认删除 目标站库中的: ${target}",
-								"api": "get:/_api_/files/target.txt?line=$target",
+								"api": "delete:/_api_/file/config/target.txt?line=$target",
 							},
 							{
 								"type": "button",
