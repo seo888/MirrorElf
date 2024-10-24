@@ -158,6 +158,16 @@
 						"searchable": true,
 					},
 					{
+						"type": "static-mapping",
+						"name": "is_mapping",
+						"label": "链接映射",
+						"map": {
+							"true": "链接映射",
+							"false": "正常"
+						},
+						"sortable": true,
+					},
+					{
 						"type": "datetime",  // 显示为日期时间类型
 						"name": "updated_at",
 						"label": "更新于",
@@ -166,7 +176,7 @@
 					{
 						"type": "operation",
 						"label": "操作",
-						"width": 120,
+						"width": 125,
 						"buttons": [
 							{
 								"type": "button",

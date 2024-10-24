@@ -311,7 +311,7 @@
 								"actionType": "ajax",
 								"tooltip": "换目标站",
 								"confirmText": "确认随机更换【${id}】${domain} 目标站: ${target}",
-								"api": "get:/_api_/website/random_target?id=$id",
+								"api": "get:/_api_/website/random_target?id=$id"
 							},
 							{
 								"type": "button",
@@ -320,6 +320,7 @@
 								"tooltip": "删除目标站",
 								"confirmText": "确认删除 目标站库中的: ${target}",
 								"api": "delete:/_api_/file/config/target.txt?line=$target",
+								"reload": "none"
 							},
 							{
 								"type": "button",
@@ -442,6 +443,7 @@
 								"tooltip": "清空缓存",
 								"confirmText": "确认清空【${id}】${domain} 所有页面缓存",
 								"api": "delete:/_api_/website_cache/delete?domain=$domain",
+								"reload": "none"
 							},
 							{
 								"type": "button",
