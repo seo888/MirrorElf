@@ -299,7 +299,7 @@
 					{
 						"type": "operation",
 						"label": "操作",
-						"width": 150,
+						"width": 155,
 						"buttons": [
 							{
 								"type": "button",
