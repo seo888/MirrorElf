@@ -12,7 +12,7 @@
 				"id": "crud-table",
 				"syncLocation": false,
 				// "quickSaveApi": "/_api_/website_cache/update?id=${id}",  // 更新 API 地址
-				"draggable": true,
+				// "draggable": true,
 				"api": "/_api_/website_cache/query?is_mapping=false",
 				"perPageAvailable": [
 					10,
