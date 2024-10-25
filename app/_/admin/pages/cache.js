@@ -156,31 +156,31 @@
 					{
 						"type": "static-mapping",
 						"name": "is_mapping",
-						"label": "链接映射",
+						"label": "状态",
 						"map": {
-							"true": "映射",
+							"true": "映射链接",
 							"false": "正常"
 						},
 						"sortable": true,
 						"searchable": {
 							"type": "select",
 							"name": "is_mapping",
-							"label": "链接映射",
+							"label": "状态",
 							"options": [
 								{
 									"label": "正常",
 									"value": false
 								},
 								{
-									"label": "全部",
+									"label": "正常+映射链接",
 									"value": ''
 								},
 								{
-									"label": "映射",
+									"label": "映射链接",
 									"value": true
 								},
 							],
-							"value": '',  // 默认值设置为 "主站"
+							"value": '正常',  // 默认值设置为 "正常"
 							"placeholder": "选择站点类型"
 						}
 					},
