@@ -3,6 +3,11 @@
 # 切换到项目目录
 cd /www/Mirror-Elf
 
+# 创建需要的目录
+mkdir -p ./data/postgres_data
+mkdir -p ./data/rabbitmq_data
+mkdir -p ./data/garnet_data
+
 # 执行更新脚本
 docker exec mirror_elf python update.py
 
