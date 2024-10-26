@@ -15,3 +15,4 @@ echo "$ips" > "$IPS_TXT"
 mkdir -p ../data/postgres_data
 mkdir -p ../data/rabbitmq_data
 mkdir -p ../data/garnet_data
+mkdir -p ../data/libretranslate_data
