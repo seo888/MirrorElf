@@ -435,6 +435,7 @@ services:
 
   libretranslate:
     image: libretranslate/libretranslate
+    container_name: libretranslate
     volumes:
       - libretranslate_data:/app/data  # 将 libretranslate_data 卷挂载到容器内的指定路径
     ports:
