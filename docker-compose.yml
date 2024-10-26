@@ -424,8 +424,6 @@ services:
     depends_on:
       - rabbitmq
   
-
-
   flower:
     image: mher/flower
     container_name: flower
@@ -434,6 +432,13 @@ services:
       - "5555:5555"
     depends_on:
       - rabbitmq
+
+  libretranslate:
+    image: libretranslate/libretranslate
+    volumes:
+      - libretranslate_data:/app/data  # 将 libretranslate_data 卷挂载到容器内的指定路径
+    ports:
+      - "5000:5000"
 
 volumes:
   postgres_db_data:
@@ -454,3 +459,9 @@ volumes:
       type: none
       o: bind
       device: /www/Mirror-Elf/data/rabbitmq_data  # 指定外部的路径
+  libretranslate_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /www/Mirror-Elf/data/libretranslate_data  # 指定 LibreTranslate 的外部数据路径
