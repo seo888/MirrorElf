@@ -253,6 +253,30 @@
 											"title": "访问策略",
 											"body": [
 												{
+													"name": "外链策略",
+													"type": "radios",
+													"label": "外链策略",
+													"value": 4,
+													"options": [
+														{
+															"label": "不处理",
+															"value": '0'
+														},
+														{
+															"label": "转为本站内部链接",
+															"value": '1'
+														},
+														{
+															"label": "转为全站随机链接（主站+泛站）",
+															"value": '2',
+														},
+														{
+															"label": "转为链轮链接（服务器上所有站点）",
+															"value": '3',
+														}
+													]
+												},
+												{
 													"name": "非绑定域名来路",
 													"type": "switch",
 													"label": "非绑定域名来路"
