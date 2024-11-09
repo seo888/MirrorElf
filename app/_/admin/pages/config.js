@@ -86,6 +86,12 @@
 													"label": "登录密码",
 													"required": true,
 													"hint": "默认账号密码admin，请及时修改"
+												},
+												{
+													"name": "雷池Token",
+													"type": "input-text",
+													"label": "雷池Token",
+													"desc": "与防火墙通信，展示网站数据、自动https证书，请务必正确填写"
 												}
 											]
 										}
