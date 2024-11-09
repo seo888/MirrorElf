@@ -47,12 +47,6 @@
             "icon": "fa fa-file-text"
           },
           {
-            "label": "一键https",
-            "url": "/https",
-            "schemaApi": "jsonp:/_/admin/pages/https.js?callback=jsonpCallback",
-            "icon": "fa fa-lock"
-          },
-          {
             "label": "爬虫监控",
             "url": "/flower",
             "schemaApi": "jsonp:/_/admin/pages/flower.js?callback=jsonpCallback",

@@ -131,6 +131,11 @@
 													"label": "自动建站"
 												},
 												{
+													"name": "自动https证书",
+													"type": "switch",
+													"label": "自动https证书"
+												},
+												{
 													"name": "泛站自动建站",
 													"type": "switch",
 													"label": "泛站自动建站"
