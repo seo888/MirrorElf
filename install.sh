@@ -45,6 +45,7 @@ tar -xzf "$TAR_FILE" --one-top-level=Mirror-Elf --strip-components=1
 # 检查解压是否成功
 if [ $? -eq 0 ]; then
   echo "解压成功！"
+  rm -rf $TAR_FILE
 else
   echo "解压失败！"
   exit 1
@@ -59,7 +60,7 @@ PROJECT_DIR="/www/Mirror-Elf"
 cd "$PROJECT_DIR" || exit 1
 
 # 创建需要的目录
-mkdir -p ./data/postgres_data ./data/rabbitmq_data ./data/garnet_data ./data/libretranslate_data
+mkdir -p ./data/postgres_data ./data/rabbitmq_data ./data/garnet_data
 
 # 生成 ips.txt 文件
 cd "$PROJECT_DIR/app" && bash ips.sh || exit 1

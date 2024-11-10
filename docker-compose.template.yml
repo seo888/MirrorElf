@@ -23,6 +23,7 @@ services:
     network_mode: host
     build: ./app
     container_name: mirror_elf
+    restart: on-failure
     depends_on:
       rabbitmq:
         condition: service_healthy
@@ -39,6 +40,7 @@ services:
   postgres:
     image: postgres:13
     container_name: postgres_db
+    restart: on-failure
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: mirrorelf
@@ -58,6 +60,7 @@ services:
   garnet:
     image: 'ghcr.io/microsoft/garnet'
     container_name: garnet_service
+    restart: on-failure
     ulimits:
       memlock: -1
     ports:
@@ -68,6 +71,7 @@ services:
   rabbitmq:
     image: "rabbitmq:3-management"
     container_name: rabbitmq
+    restart: on-failure
     ports:
       - "5672:5672"
       - "15672:15672"
@@ -87,6 +91,7 @@ services:
   flower:
       image: mher/flower
       container_name: flower
+      restart: on-failure
       command: celery --broker=amqp://admin:mirrorelf@rabbitmq:5672// flower
       ports:
         - "5555:5555"
@@ -94,6 +99,3 @@ services:
         - rabbitmq
   
 $WORKER_LOOP
-  
-
-
