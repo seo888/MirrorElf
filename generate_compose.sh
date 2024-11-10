@@ -24,7 +24,7 @@ for i in $(seq 1 $NUM_WORKERS); do
 done
 
 # 打印 WORKER_LOOP 的内容
-echo "$WORKER_LOOP"
+# echo "$WORKER_LOOP"
 
 export WORKER_LOOP
 envsubst < docker-compose.template.yml > docker-compose.yml
