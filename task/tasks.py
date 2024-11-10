@@ -11,7 +11,6 @@ from lxml import html as lxml_html
 import html
 from yarl import URL
 from trans import YouDao
-from function import Func
 
 IPS_TXT = "config/IPS.txt"
 REDIS_DEBUG_ADDR = "redis://localhost"
@@ -31,7 +30,6 @@ celery_app.conf.update({
 })
 
 redis_client = redis.from_url(REDIS_DEBUG_ADDR, max_connections=100)
-func = Func()
 youdao = YouDao()
 # translator = LocalTrans()
 ua = UserAgent(platforms='pc')

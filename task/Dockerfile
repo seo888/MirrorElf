@@ -16,9 +16,3 @@ COPY . .
 ARG VERSION=$(cat VERSION)
 
 ENV APP_VERSION=${VERSION}
-
-# 暴露 Sanic 的默认端口
-EXPOSE 16888
-
-# 设置容器启动时的默认命令
-CMD ["python", "main.py"]
