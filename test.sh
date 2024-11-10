@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sudo apt install -y jq
+sudo apt install -y unzip
+
 # Fetch the latest release information from GitHub API
 RELEASE_JSON=$(curl -s https://api.github.com/repos/seo888/MirrorElf/releases/latest)
 
