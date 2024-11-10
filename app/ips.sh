@@ -10,9 +10,3 @@ ips=$(ip addr | grep 'inet ' | awk '{print $2}' | cut -d/ -f1 | \
     
 # 将 IP 地址写入文件
 echo "$ips" > "$IPS_TXT"
-
-# 创建需要的目录
-mkdir -p ../data/postgres_data
-mkdir -p ../data/rabbitmq_data
-mkdir -p ../data/garnet_data
-mkdir -p ../data/libretranslate_data

@@ -14,8 +14,12 @@ docker exec mirror_elf python update.py
 rm -rf /www/Mirror-Elf/app/core*
 
 # 从 repo 目录复制最新的 update.sh 文件，覆盖现有文件
+cp /www/Mirror-Elf/app/repo/generate_compose.sh /www/Mirror-Elf/generate_compose.sh
 cp /www/Mirror-Elf/app/repo/update.sh /www/Mirror-Elf/update.sh
-cp /www/Mirror-Elf/app/repo/docker-compose.yml /www/Mirror-Elf/docker-compose.yml
+cp /www/Mirror-Elf/app/repo/docker-compose.template.yml /www/Mirror-Elf/docker-compose.template.yml
+
+# 生成docker-compose.yml
+bash generate_compose.sh
 
 # 停止 Docker Compose
 docker compose down
