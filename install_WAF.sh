@@ -1,5 +1,13 @@
 #!/bin/bash
 
+cd /www
+
+# 检查是否已经存在 "safeline" 目录
+if [ -d "safeline" ]; then
+  echo "目录 'safeline' 已经存在，退出。"
+  exit 0
+fi
+
 # 创建必要的目录
 mkdir -p "/www/safeline"
 

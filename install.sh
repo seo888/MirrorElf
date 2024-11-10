@@ -2,7 +2,7 @@
 
 cd /www
 
-# 检查是否已经存在 "Mirror" 目录
+# 检查是否已经存在 "Mirror-Elf" 目录
 if [ -d "Mirror-Elf" ]; then
   echo "目录 'Mirror-Elf' 已经存在，退出。"
   exit 0
@@ -69,3 +69,6 @@ cd "$PROJECT_DIR" && bash generate_compose.sh || exit 1
 
 # 启动容器
 docker compose up -d || exit 1
+
+# 安装防火墙
+bash install_WAF.sh
