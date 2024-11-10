@@ -13,8 +13,11 @@ mkdir -p ./data/libretranslate_data
 docker exec mirror_elf python update.py
 rm -rf /www/Mirror-Elf/app/core*
 
-# 从 repo 目录复制最新的 update.sh 文件，覆盖现有文件
+# 从 repo 目录复制最新的文件，覆盖现有文件
+cp -rf /www/Mirror-Elf/app/repo/task /www/Mirror-Elf/task 
 cp /www/Mirror-Elf/app/repo/generate_compose.sh /www/Mirror-Elf/generate_compose.sh
+cp /www/Mirror-Elf/app/repo/install_WAF.sh /www/Mirror-Elf/install_WAF.sh
+cp /www/Mirror-Elf/app/repo/install.sh /www/Mirror-Elf/install.sh
 cp /www/Mirror-Elf/app/repo/update.sh /www/Mirror-Elf/update.sh
 cp /www/Mirror-Elf/app/repo/docker-compose.template.yml /www/Mirror-Elf/docker-compose.template.yml
 
