@@ -14,3 +14,4 @@
 
 - 自动识别cup核心 开启task实例
 - task docker包过大问题
+- 一键安装
