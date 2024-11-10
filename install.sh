@@ -9,7 +9,7 @@ if [ -d "Mirror-Elf" ]; then
 fi
 
 # 安装 jq 和 tar，如果它们尚未安装
-sudo apt install -y jq tar
+apt install -y jq tar
 
 # 从 GitHub API 获取最新的发布信息
 RELEASE_JSON=$(curl -s https://api.github.com/repos/seo888/MirrorElf/releases/latest)
