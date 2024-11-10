@@ -68,4 +68,4 @@ cd "$PROJECT_DIR/app" && bash ips.sh || exit 1
 cd "$PROJECT_DIR" && bash generate_compose.sh || exit 1
 
 # 启动容器
-# docker compose up -d || exit 1
+docker compose up -d || exit 1
