@@ -7,7 +7,6 @@ cd /www/Mirror-Elf
 mkdir -p ./data/postgres_data
 mkdir -p ./data/rabbitmq_data
 mkdir -p ./data/garnet_data
-mkdir -p ./data/libretranslate_data
 
 # 执行更新脚本
 docker exec mirror_elf python update.py

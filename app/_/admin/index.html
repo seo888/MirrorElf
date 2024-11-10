@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://unpkg.com/amis@6.8.0/sdk/helper.css" />
   <link rel="stylesheet" href="https://unpkg.com/amis@6.8.0/sdk/iconfont.css" />
   <script src="https://unpkg.com/amis@6.8.0/sdk/sdk.js"></script>
-  <!-- <script src="https://unpkg.com/vue@2"></script> -->
+  <script src="https://unpkg.com/vue@2"></script>
   <script src="https://unpkg.com/history@4.10.1/umd/history.js"></script>
 
   <style>
@@ -34,6 +34,16 @@
       color: blue;
       /* 默认颜色为蓝色 */
     }
+
+    .fixed-bottom {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;  /* 居中显示内容 */
+      padding: 10px 0;
+     
+      z-index: 1000; 确保在其他元素之上
+    }
   </style>
 </head>
 
@@ -55,7 +65,7 @@
 
       const app = {
         type: "app",
-        brandName: "镜像精灵",  // 使用模板显示版本号
+        brandName: "镜像精灵·Mirror-Elf",  // 使用模板显示版本号
         logo: "/_/admin/logo.png",
         header: {
           type: "tpl",
@@ -63,7 +73,8 @@
           className: "w-full",
           tpl: '<div class="flex justify-between"><div></div><div><a href="#" onclick="localStorage.clear();location.href = \'/_/login\';">退出登录</a></div></div>',
         },
-        asideBefore: {
+        
+        asideAfter: {
           type: "service",  // 使用 service 组件
           api: {"url": "/_api/version",
             "onError": {
@@ -78,11 +89,11 @@
           body: {
             type: "tpl",
             tpl: "—— Mirror-Elf ${version} ——",  // 使用模板显示版本号
-            className: "p-2 text-center",
+            className: "p-2 text-center fixed-bottom",
           }
         },
         // asideBefore: '<div class="p-2 text-center">菜单前面区域</div>',
-        // asideAfter: '<div class="p-2 text-center">菜单后面区域</div>',
+        // asideAfter: '<div class="text-center fixed-bottom">版本: 1.0.1</div>',
         api: "/_/admin/pages/site.json",
       };
 
