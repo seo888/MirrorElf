@@ -1,7 +1,8 @@
 一键安装
 
+
 ```
-cd /www && git clone https://github.com/seo888/MirrorElf.git Mirror-Elf && cd Mirror-Elf/app && bash ips.sh && cd ../ && docker compose up -d
+cd /www && curl -O https://raw.githubusercontent.com/seo888/MirrorElf/main/install.sh && bash install.sh
 ```
 
 一键删除
