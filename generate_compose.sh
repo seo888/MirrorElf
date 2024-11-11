@@ -27,4 +27,4 @@ done
 # echo "$WORKER_LOOP"
 
 export WORKER_LOOP
-envsubst < docker-compose.template.yml > docker-compose.yml
+envsubst < docker-compose-template.yml > docker-compose.yml

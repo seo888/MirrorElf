@@ -25,11 +25,11 @@ if [ -z "$TAR_URL" ]; then
 fi
 
 # 定义基于版本标签的输出 tar 文件名
-TAR_FILE="MirrorElf-$(echo "$RELEASE_JSON" | jq -r .tag_name).tar.gz"
+TAR_FILE="MirrorElf.tar.gz"
 
 # 使用 curl 下载 tarball
 echo "从 $TAR_URL 下载发布版本..."
-curl -L -o "$TAR_FILE" "$TAR_URL"
+curl -L -o $TAR_FILE $TAR_URL
 
 # 检查下载是否成功
 if [ $? -eq 0 ]; then
@@ -41,7 +41,21 @@ fi
 
 # 解压下载的 tar 文件，并将解压后的目录命名为 "repo"
 echo "正在解压 $TAR_FILE..."
-tar -xzf "$TAR_FILE" --one-top-level=repo --strip-components=1
+rm -rf repo && mkdir -p repo
+
+# 解压到临时目录
+tar -xzf "$TAR_FILE" -C repo
+
+# 检查第一层目录是否存在
+FIRST_DIR=$(ls /www/Mirror-Elf/app/repo | grep -E '^[^.]') # 这假设第一层目录是顶级目录中的第一个非隐藏目录
+if [ -z "$FIRST_DIR" ]; then
+    echo "No top-level directory found in the archive."
+    exit 1
+fi
+mv /www/Mirror-Elf/app/repo/"$FIRST_DIR" /www/Mirror-Elf/app
+rm -rf /www/Mirror-Elf/app/repo
+mv /www/Mirror-Elf/app/"$FIRST_DIR" /www/Mirror-Elf/app/repo
+
 
 # 检查解压是否成功
 if [ $? -eq 0 ]; then
@@ -64,8 +78,8 @@ cp -rf /www/Mirror-Elf/app/repo/task /www/Mirror-Elf
 cp /www/Mirror-Elf/app/repo/generate_compose.sh /www/Mirror-Elf
 cp /www/Mirror-Elf/app/repo/install_WAF.sh /www/Mirror-Elf
 cp /www/Mirror-Elf/app/repo/install.sh /www/Mirror-Elf
+cp /www/Mirror-Elf/app/repo/docker-compose-template.yml /www/Mirror-Elf
 cp /www/Mirror-Elf/app/repo/update.sh /www/Mirror-Elf
-cp /www/Mirror-Elf/app/repo/docker-compose.template.yml /www/Mirror-Elf
 
 # 创建需要的目录
 cd /www/Mirror-Elf
