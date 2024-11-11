@@ -9,7 +9,13 @@ if [ -d "Mirror-Elf" ]; then
 fi
 
 # 安装 jq 和 tar，如果它们尚未安装
-apt install -y jq tar
+if command -v yum &> /dev/null; then
+    echo "CentOS系统"
+    yum install -y jq tar
+else
+    echo "Debian/Ubuntu系统"
+    apt install -y jq tar
+fi
 
 # 从 GitHub API 获取最新的发布信息
 RELEASE_JSON=$(curl -s https://api.github.com/repos/seo888/MirrorElf/releases/latest)

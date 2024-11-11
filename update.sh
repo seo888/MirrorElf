@@ -1,7 +1,13 @@
 #!/bin/bash
 
 # 安装 jq 和 tar，如果它们尚未安装
-apt install -y jq tar
+if command -v yum &> /dev/null; then
+    echo "CentOS系统"
+    yum install -y jq tar
+else
+    echo "Debian/Ubuntu系统"
+    apt install -y jq tar
+fi
 
 # 切换到项目app目录
 cd /www/Mirror-Elf/app
