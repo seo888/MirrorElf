@@ -83,7 +83,7 @@ cp /www/Mirror-Elf/app/repo/update.sh /www/Mirror-Elf
 
 # 创建需要的目录
 mv /www/Mirror-Elf/data /www/Mirror-Elf_data
-mkdir -p /www/Mirror-Elf_data/postgres_data /www/Mirror-Elf_data/rabbitmq_data /www/Mirror-Elf_data/garnet_data
+mkdir -p /www/Mirror-Elf_data/postgres_data /www/Mirror-Elf_data/rabbitmq_data
 
 # 停止 Docker Compose
 docker compose down
