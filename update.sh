@@ -89,7 +89,7 @@ mkdir -p /www/Mirror-Elf_data/postgres_data /www/Mirror-Elf_data/rabbitmq_data /
 docker compose down
 
 # 生成docker-compose.yml
-bash generate_compose.sh
+cd /www/Mirror-Elf && bash /www/Mirror-Elf/generate_compose.sh
 
 # 删除指定镜像
 docker rmi rabbitmq:3-management  || true  # 如果镜像不存在则忽略错误
