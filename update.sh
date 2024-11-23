@@ -81,23 +81,31 @@ cp /www/Mirror-Elf/app/repo/install.sh /www/Mirror-Elf
 cp /www/Mirror-Elf/app/repo/docker-compose-template.yml /www/Mirror-Elf
 cp /www/Mirror-Elf/app/repo/update.sh /www/Mirror-Elf
 
-# 创建需要的目录
-mv /www/Mirror-Elf/data /www/Mirror-Elf_data
-mkdir -p /www/Mirror-Elf_data/postgres_data /www/Mirror-Elf_data/rabbitmq_data
-
-# 停止 Docker Compose
-docker compose down --rmi all --volumes
-
-# 生成docker-compose.yml
-cd /www/Mirror-Elf && bash /www/Mirror-Elf/generate_compose.sh
-
-# 删除指定镜像
-docker rmi rabbitmq:3-management  || true  # 如果镜像不存在则忽略错误
-docker rmi mirror-elf-mirror_elf || true  # 如果镜像不存在则忽略错误
-docker rmi $(docker images -q mirror-elf-celery_worker*) || true  # 同样忽略错误
-
-# 删除 rabbitmq_data 卷
-docker volume rm mirror-elf_rabbitmq_data || true  # 如果卷不存在则忽略错误
+# 检查 /www/Mirror-Elf/data 是否存在
+if [ -d "/www/Mirror-Elf/data" ]; then
+    echo "目录 /www/Mirror-Elf/data 存在，准备移动数据..."
+    # 移动目录
+    mv /www/Mirror-Elf/data /www/Mirror-Elf_data
+    echo "数据已移动到 /www/Mirror-Elf_data"
+    # 创建需要的子目录
+    mkdir -p /www/Mirror-Elf_data/postgres_data /www/Mirror-Elf_data/rabbitmq_data
+    # 停止 Docker Compose
+    docker compose down --rmi all --volumes
+    # 生成docker-compose.yml
+    cd /www/Mirror-Elf && bash /www/Mirror-Elf/generate_compose.sh
+else
+    # 仅创建必要的目录
+    mkdir -p /www/Mirror-Elf_data /www/Mirror-Elf_data/postgres_data /www/Mirror-Elf_data/rabbitmq_data
+    docker compose down
+    # 生成docker-compose.yml
+    cd /www/Mirror-Elf && bash /www/Mirror-Elf/generate_compose.sh
+    # 删除指定镜像
+    docker rmi rabbitmq:3-management  || true  # 如果镜像不存在则忽略错误
+    docker rmi mirror-elf-mirror_elf || true  # 如果镜像不存在则忽略错误
+    docker rmi $(docker images -q mirror-elf-celery_worker*) || true  # 同样忽略错误
+    # 删除 rabbitmq_data 卷
+    docker volume rm mirror-elf_rabbitmq_data || true  # 如果卷不存在则忽略错误
+fi
 
 docker system prune -a -f
 
