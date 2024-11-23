@@ -82,8 +82,8 @@ cp /www/Mirror-Elf/app/repo/docker-compose-template.yml /www/Mirror-Elf
 cp /www/Mirror-Elf/app/repo/update.sh /www/Mirror-Elf
 
 # 创建需要的目录
-cd /www/Mirror-Elf
-mkdir -p ./data/postgres_data ./data/rabbitmq_data ./data/garnet_data
+mv /www/Mirror-Elf/data /www/Mirror-Elf_data
+mkdir -p /www/Mirror-Elf_data/postgres_data /www/Mirror-Elf_data/rabbitmq_data /www/Mirror-Elf_data/garnet_data
 
 # 停止 Docker Compose
 docker compose down

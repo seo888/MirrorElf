@@ -66,7 +66,8 @@ PROJECT_DIR="/www/Mirror-Elf"
 cd "$PROJECT_DIR" || exit 1
 
 # 创建需要的目录
-mkdir -p ./data/postgres_data ./data/rabbitmq_data ./data/garnet_data
+mv /www/Mirror-Elf/data /www/Mirror-Elf_data
+mkdir -p /www/Mirror-Elf_data/postgres_data /www/Mirror-Elf_data/rabbitmq_data /www/Mirror-Elf_data/garnet_data
 
 # 生成 ips.txt 文件
 cd "$PROJECT_DIR/app" && bash ips.sh || exit 1
