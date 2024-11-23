@@ -86,7 +86,7 @@ mv /www/Mirror-Elf/data /www/Mirror-Elf_data
 mkdir -p /www/Mirror-Elf_data/postgres_data /www/Mirror-Elf_data/rabbitmq_data
 
 # 停止 Docker Compose
-docker compose down
+docker compose down --rmi all --volumes
 
 # 生成docker-compose.yml
 cd /www/Mirror-Elf && bash /www/Mirror-Elf/generate_compose.sh
