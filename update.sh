@@ -90,6 +90,7 @@ if [ -d "/www/Mirror-Elf/data" ]; then
     # 创建需要的子目录
     mkdir -p /www/Mirror-Elf_data/postgres_data /www/Mirror-Elf_data/rabbitmq_data
     # 停止 Docker Compose
+    echo "镜像开始重置..."
     docker compose down --rmi all --volumes
     # 生成docker-compose.yml
     cd /www/Mirror-Elf && bash /www/Mirror-Elf/generate_compose.sh
