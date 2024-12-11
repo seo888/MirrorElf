@@ -198,7 +198,7 @@ services:
       - CELERYD_PREFETCH_MULTIPLIER=1
     depends_on:
       - rabbitmq
-      
+
   celery_worker_10:
     network_mode: host
     build: ./app

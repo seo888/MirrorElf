@@ -10,8 +10,9 @@ for i in $(seq 1 $NUM_WORKERS); do
     build: ./task
     container_name: celery_worker_$i
     cpus: '0.6'
+    mem_limit: 512m
     restart: on-failure
-    command: celery -A tasks worker -l info -P gevent -c 512 --prefetch-multiplier=1 --time-limit=600 -n celery_worker_$i@%h
+    command: celery -A tasks worker -l info -P gevent -c 256 --prefetch-multiplier=1 --time-limit=300 --max-tasks-per-child=50 -n celery_worker_$i@%h
     environment:
       - CELERY_BROKER_URL=amqp://admin:mirrorelf@localhost//
       - CELERY_RESULT_BACKEND=rpc://
